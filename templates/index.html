@@ -148,13 +148,16 @@
             MINHA PÁGINA
         </h1>
     </header>
-      <!-- CONTEÚDO -->
      
     <!-- CONTEÚDO PRINCIPAL -->
     <section>
         <nav>
         </nav>
         <main id="conteudo">
+              {% for conteudo in conteudos %}
+                {% if conteudo.ativo %}
+                  {{conteudo}}
+              {% endfor %}
         </main>
     </section> 
     <!-- RODAPÉ -->
