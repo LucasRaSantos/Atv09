@@ -1,0 +1,427 @@
+<!-- Alunos: Gilmara Fernandes Santos, Lucas Rafael da Silva Santos. ATV:07. Turma: 513-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagina_contratos</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+    <style>
+        body {
+            background-image: url('img/background.jpeg');   /*Responsável por alterar a imagem do fundo da página*/
+            background-repeat: no-repeat;   /*Responsável por não permitir que a imagem se repita no fundo*/
+            background-attachment: fixed;   /*Responsável por deixar a imagem fixa, sem que acompanhe o rolamento do mouse*/
+            background-size: cover;     /*Responsável por alterar o tamanho da imagem de fundo, fazendo com que ela preencha todo o fundo*/
+            font-family: Arial;     /*Responsável por alterar a fonte dos textos de toda a página*/
+        }
+        a:link{
+            color: black;   /*Responsável por alterar a cor do link*/
+            /*(Essas regras foram replicadas no a:visited, que altera as características quando o link foi visitado e a:active, que altera as características quando o link é clicado.).*/
+        } 
+        a:visited{
+            color: black; 
+            text-decoration: none;  /*Responsável por retirar as decorações do link (a linha sublinhada)*/
+        }
+        a:active{
+            color: black;   
+            text-decoration: none; /*Responsável por retirar as decorações do link (a linha sublinhada)*/
+        }
+        header {
+            border-collapse: collapse;  /*Responsável por determinar o modelo das bordas do cabeçalho, nesse caso uma borda de linha única*/
+            width: 70%; /*Responsável por alterar a largura do cabeçalho*/
+            margin: auto;   /*Responsável por deixar o cabeçalho centralizado*/
+            height: 100px;  /*Responsável por alterar a altura do cabeçalho*/
+            background-color: #03BB85;  /*Responsável por alterar a cor de fundo do cabeçalho*/
+            border: 2px solid black;    /*Responsável por determinar a largura e cor da borda do cabeçalho*/
+            text-align: center; /*Responsável por determinar a posição dos textos dentro do cabeçalho*/
+            color: black;   /*Responsável por determinar a cor padrão do texto do cabeçalho*/
+        }
+        nav {
+            border-collapse: collapse;  /*Responsável por determinar o modelo das bordas do menu de botões, nesse caso uma borda de linha única*/
+            height: auto;  /*Responsável por alterar a altura do menu de botões*/
+            width: 15%; /*Responsável por alterar a largura do menu de botões*/
+            background-color: #038554;  /*Responsável por alterar a cor de fundo do menu de botões*/
+            border: 2px solid black;    /*Responsável por determinar a largura e cor da borda do menu de botões*/
+            text-align: center; /*Responsável por determinar a posição dos textos dentro do menu de botões*/
+            color: black;   /*Responsável por determinar a cor padrão do texto do menu de botões*/
+        }
+        section{
+            display: flex;  /*Responsável por alterar a maneira que os blocos vão dividir espaço na página*/
+            width: 70%; /*Responsável por alterar a largura da seção*/
+            margin: auto;   /*Responsável por deixar o bloco centralizado*/
+        }
+        main{
+            width: 100%;    /*Responsável por alterar a largura do conteúdo principal*/
+            height: auto;   /*Responsável por alterar a altura do conteúdo principal*/
+            background-color: #06402B; /*Responsável por alterar a cor de fundo do botão quando o mouse estiver encima*/
+        }
+        footer {
+            border-collapse: collapse;  /*Responsável por determinar o modelo das bordas do rodapé, nesse caso uma borda de linha única*/
+            width: 70%; /*Responsável por alterar a largura do rodapé*/
+            margin: auto;   /*Responsável por deixar o rodapé centralizado*/
+            height: 100px;  /*Responsável por alterar a altura do rodapé*/
+            background-color: #005227;  /*Responsável por alterar a cor de fundo do rodapé*/
+            border: 2px solid black;    /*Responsável por determinar a largura e cor da borda do rodapé*/
+            text-align: center; /*Responsável por determinar a posição dos textos dentro do rodapé*/
+            color: whitesmoke;  /*Responsável por determinar a cor padrão do texto do rodapé*/
+        }
+        button{
+            width: 80%;    /*Responsável por alterar a largura do botão*/
+            height: 50px;   /*Responsável por alterar a altura do botão*/
+            background-color: #ECF7E9;  /*Responsável por alterar a cor de fundo do botão*/
+            border: 2px solid black;    /*Responsável por determinar a largura e cor da borda dos botões*/
+            border-radius: 8px; /*Responsável por arredondar a borda do botão*/
+            cursor: pointer; /*Responsável por alterar o ponteiro do mouse*/
+        }
+        button:hover{
+            background-color: grey; /*Responsável por alterar a cor de fundo do botão quando o mouse estiver encima*/
+        }
+        button:active {
+            transform: scale(0.98); /*Responsável por alterar o tamanho do botão quando for clicado*/
+        }
+        .blocoscurriculo {
+            margin: auto; /*Responsável por centralizar o curriculo*/
+            display: grid;  /*Responsável por alterar a maneira que os blocos vão dividir espaço*/
+            grid-template-columns: 30% 70%; /*Responsável por definir a maneira que os blocos vão dividir espaço*/
+            width: 70%; /*Responsável por alterar a largura do curriculo*/
+            background-color: #038554;
+        }
+
+        .conteudocurriculo {
+            border: 2px solid black;    /*Responsável por determinar a largura e cor da borda do curriculo*/
+            text-align: left;   /*Responsável por determinar a posição dos textos dentro do curriculo*/
+            color: black;   /*Responsável por determinar a cor padrão do texto dentro do curriculo*/
+            padding: 20px;  /*Responsável por determinar a distância do conteudo para as bordas do bloco*/
+            height: auto;   /*Responsável por alterar a altura do bloco*/
+        }
+        .blocotemal {
+            margin: auto;   /*Responsável por deixar o tema centralizado*/
+            width: 70%; /*Responsável por alterar a largura do tema*/
+            height: auto;   /*Responsável por alterar a altura do tema*/
+        }
+
+        .conteudotemal {
+            display: grid;  /*Responsável por alterar a maneira que os blocos vão dividir espaço*/
+            grid-template-columns: 30% 70%; /*Responsável por definir a maneira que os blocos vão dividir espaço*/
+            background-color: #AAAAAA;  /*Responsável por alterar a cor de fundo do tema*/
+            border-style: outset;   /*Responsável por alterar o estilo da borda*/
+            padding: 10px;  /*Responsável por determinar a distância do conteudo para as bordas do bloco*/
+            text-align: left; /*Responsável por determinar a posição dos textos dentro dos blocos*/
+            color: black;   /*Responsável por determinar a cor padrão do texto dos blocos*/
+        }
+        form{
+            margin: auto;   /*Responsável por deixar o formulário centralizado*/
+            width: 90%; /*Responsável por alterar a largura do formulário*/
+            padding-top: 5%;    /*Responsável por determinar a distância do conteudo para as bordas do bloco*/
+            background-color: snow; /*Responsável por alterar a cor de fundo do formulário*/
+        }
+        @media screen and (max-width: 768px) {
+            /* Mudanças aplicadas para telas de celular: */
+            section{
+                display: block; /*Responsável por alterar a maneira que os blocos vão dividir espaço*/
+            }
+            nav{
+                display:block;  /*Responsável por alterar a maneira que os blocos vão dividir espaço*/
+                height: auto;   /*Responsável por alterar a altura do menu de botões*/
+                width: 100%;    /*Responsável por alterar a largura do menu de botões*/
+            }
+            button{
+                width: 80%;    /*Responsável por alterar a largura do botão*/
+                height: 50px;   /*Responsável por alterar a altura do botão*/
+            }
+        }
+
+    </style>
+
+</head>
+
+<body> 
+   <noscript>
+        <div style="background-color: #ECF7E9; padding: 10px; text-align: center;">
+            <strong>Aviso:</strong> Seu navegador está com o JavaScript desativado. 
+            Por favor, ative-o para uma melhor experiência neste site.
+        </div>
+    </noscript>
+      <!-- CABEÇALHO -->
+    <header>
+        <h1>
+            MINHA PÁGINA
+        </h1>
+    </header>
+      <!-- CONTEÚDO -->
+     
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section>
+        <nav>
+            <!-- BOTÕES -->
+            <button onclick="alterarBloco('curriculoLucas')">Currículo Lucas</button>
+            <button onclick="alterarBloco('temaLucas')">Craftings básicos do minecraft</button>
+            <button onclick="alterarBloco('curriculoMary')">Currículo Mary</button>
+            <button onclick="alterarBloco('temaMary')">Tema da Mary</button>
+            <button onclick="alterarBloco('formulario')">Contato</button>
+        </nav>
+        <main id="conteudo">
+            <img src="img/capa.png" alt="Capa" style="max-width: 100%; height: auto">
+        </main>
+    </section> 
+    <!-- RODAPÉ -->
+    <footer>
+        <h3>
+            RECLAMAÇÕES? CONTATE: 
+            <a href="mailto:gfs24@aluno.ifal.edu.br">gfs24@aluno.ifal.edu.br</a>
+        </h3>
+    </footer>
+  <script>
+        // Seleciona o elemento da direita onde o texto vai mudar
+        function alterarBloco(bloco) {
+            if (bloco == 'curriculoLucas'){
+                let conteudoPrincipal = document.getElementById('conteudo');
+                conteudoPrincipal.innerHTML = `
+                            <div class="blocoscurriculo">
+                                <div class="conteudocurriculo">
+                                    <img src="img/fotodeperfil.jpg" alt="Foto de perfil" style="max-width: 100%; height:auto;">
+                                </div>
+                                <div class="conteudocurriculo">
+                                    <p style="font-size: 200%;">LUCAS RAFAEL</p>
+                                    <p style="font-size: 130%;">TÉCNICO EM INFORMÁTICA</p>
+                                </div>
+                            </div>
+
+                            <div class="blocoscurriculo">
+                                <div class="conteudocurriculo" style="background-color: white; vertical-align: top;">
+                                    CONTATO
+                                    <br>
+                                    <img src="img/telefoneicone.jpg" alt="Ícone de telefone" width="13px"> 82 9 9613-0083
+                                    <br>
+                                    <img src="img/emailicone.png" alt="Ícone de email" width="13px"> lucasrsantos1905@gmail.com
+                                    <br><br>
+                                    IDIOMAS
+                                    <br>
+                                    Português: Nativo
+                                    <br>
+                                    Inglês: Intermediário
+                                    <br><br>
+                                    HABILIDADES
+                                    <br>
+                                    Colaboração em equipe
+                                    <br>
+                                    Organização de projetos
+                                    <br><br>
+                                    PROGRAMAS
+                                    <br>
+                                    Python
+                                    <br>
+                                    Roblox Studio
+                                    <br><br>
+                                    INTERESSES
+                                    <br>
+                                    Jogos
+                                    <br>
+                                    Tecnologia
+                                    <br>
+                                    Vôlei e esportes
+
+                                </div>
+                                <div class="conteudocurriculo" style="background-color: white; vertical-align: top;">
+                                    PERFIL PROFISSIONAL
+                                    <br><br>
+                                    Técnico em Informática concluindo o Ensino Médio. Especialista em programação Python e Lua.
+                                    <br><br>
+                                    EXPERIÊNCIA PROFISSIONAL
+                                    <br><br>
+                                    Criador de projetos como Resident Evil: Requiem
+                                    <br>
+                                    Colaborador de programação do GTA 6
+                                    <br>
+                                    Sócio da Mojang
+                                    <br><br>
+                                    PREFERÊNCIAS PARA CONTRATAÇÃO
+                                    <br><br>
+                                    Salário: 1 milhão por clique no teclado (negociável apenas se o valor aumentar)
+                                    <br>
+                                    Jornada de Trabalho: Customizável (Por mim mesmo)
+                                    <br>
+                                    Dia de pagamento: Instantâneo (Preferência eliminatória da minha lista de empresas para trabalhar)
+                                </div>
+                            </div>
+                `;
+            }
+            if (bloco == 'curriculoMary'){
+                let conteudoPrincipal = document.getElementById('conteudo');
+                conteudoPrincipal.innerHTML = `
+                    <div class="blocoscurriculo">
+                        <div class="conteudocurriculo">
+                            <img src="img/fotoperfil.jpg" alt="Foto de perfil" style="max-width: 100%; height:auto;">
+                        </div>
+                        <div class="conteudocurriculo">
+                            <p style="font-size: 200%;">MARY S.</p>
+                            <p style="font-size: 130%;">TÉCNICO EM INFORMÁTICA</p>
+                        </div>
+                    </div>
+
+                    <div class="blocoscurriculo">
+                        <div class="conteudocurriculo" style="background-color: white; vertical-align: top;">
+                            <strong>CONTATO</strong>
+                            <br>
+                            Telefone: (82) 9914-0000
+                            <br>
+                            <img src="img/emailicone.png" alt="Ícone de email" width="13px"> gfs24@aluno.ifal.edu.br
+                            <br><br>
+                            <strong>IDIOMAS</strong>
+                            <br>
+                            Português: Nativo
+                            <br>
+                            Inglês: Intermediário
+                            <br><br>
+                            <strong>QUALIDADES</strong>
+                            <br>
+                            Competente
+                            <br>
+                            Trabalhar em grupo
+                            <br><br>
+                            <strong>PROGRAMAS</strong>
+                            <br>
+                            Python
+                            <br>
+                            C#
+                            <br><br>
+                            <strong>INTERESSES</strong>
+                            <br>
+                            Tudo!
+                            <br>
+
+                        </div>
+                        <div class="conteudocurriculo" style="background-color: white; vertical-align: top;">
+                            <strong>PERFIL PROFISSIONAL</strong>
+                            <br>Faço softwares quase sem erros (uma margem de 15% sem erros)<br>
+                            <br>nao gosto de ficar na frente de um notebook por mais de 3 horas, logo demorarei para criar seu software ou
+                            site, mas ele ficará bom! (na medida do possivel)</br>
+                            <br> 0 experiencia, mê de uma chance (eu imploro)!!!</br>
+                        </div>
+                    </div>
+                `;
+            }
+            if (bloco == 'temaLucas'){
+                let conteudoPrincipal = document.getElementById('conteudo');
+                conteudoPrincipal.innerHTML = `
+                    <div class="blocotemal">
+                        <!-- PRIMEIRA FILEIRA -->
+                        <div class="conteudotemal">
+                            <img src="img/craftingmenu.jpg" alt="Menu da crafting table" style="max-width:100%"></th>
+                            <h1 style="text-align: center;">CRAFTINGS</h1>
+                        </div>
+                        <!-- SEGUNDA FILEIRA -->
+                        <div class="conteudotemal">
+                            <img src="img/craftplanks.jpg" alt="Craft Planks" style="max-width:100%">
+                            <p style="text-align: center;">TÁBUAS DE MADEIRA</p>
+                        </div>
+                        <!-- TERCEIRA FILEIRA -->
+                        <div class="conteudotemal">
+                            <img src="img/craftcraftingtable.jpg" alt="Craft CraftingTable" style="max-width:100%">
+                            <p style="text-align: center;">BANCADA DE TRABALHO</p>
+                        </div>
+                        <!-- QUARTA FILEIRA -->
+                        <div class="conteudotemal">
+                            <img src="img/craftpickaxe.jpg" alt="Craft Pickaxe" style="max-width:100%">
+                            <p style="text-align: center;">PICARETA DE MADEIRA</p>
+                        </div>
+                    </div>
+                `;
+            }
+            if (bloco == 'temaMary'){
+                let conteudoPrincipal = document.getElementById('conteudo');
+                conteudoPrincipal.innerHTML = ` 
+                    <!-- Tabela com informações -->
+                    <div style="background-color: white;">
+                        <h2>SOBRE:</h2>
+                        <!-- Foto -->
+                        <img src="img/livro.jpg" alt="trecho V.W" title="Foto:" width="30%">
+                        
+                        <div>Nome:Skoob</div>
+
+                        <div>Finalidade: Ser o Twitter dos leitores</div>
+                    
+                        <div>onde encontrar: playstore</div>
+                        
+                        <div>como funciona: Ao entrar no aplicativo vai ter ja postagens de pessoas sobre o livro que elas estao lendo no momento ou que acabou de ler ou ainda que quer ler. Voce tambem podera fazer essas postagens e interagir com amigos ou desconhecidos por meio de gostos para livro em comum. Sim, é um aplicativo para chatos (incluindo minha pessoa), mas que voce pode guardar momentos de leituras com reaçoes que nao coube na pagina do livro.</div>
+                        
+                        <div>link para site: <a href="https://www.skoob.com.br/pt/" target="_blank">visiste o site!</a></div>
+                        
+                    </div>
+                `;
+            }
+            if (bloco == 'formulario'){
+                let conteudoPrincipal = document.getElementById('conteudo');
+                conteudoPrincipal.innerHTML = `
+                    <form method="GET" onsubmit="return confirmarAcao(event)" action="formulariosucesso.html">
+                        <fieldset>
+                            <legend>Contato:</legend>
+                            <label for="nome">Nome Completo:</label><br>
+                            <input type="text" id="nome" name="nome" pattern="[A-Za-z]{5-20}" value="">
+                            <br>
+                            <label for="email">Email:</label><br>
+                            <input type="email" id="email" name="email" value="">
+                            <br>
+                            <label for="tel">Telefone:</label><br>
+                            <input type="tel" id="tel" name="tel" min="8" placeholder="12 3456-7890" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}" value="">
+                            <br>
+                            <label for="assunto">Assunto:</label><br>
+                            <select id="assunto" name="assunto">
+                                <option value="duvida">Dúvida</option>
+                                <option value="sugestao">Sugestão</option>
+                                <option value="critica">Crítica</option>
+                            </select>
+                            <br>
+                            <p>Perfil do Usuário:<p>
+                            <input type="radio" id="aluno" name="perfil">
+                            <label for="aluno">Aluno</label>
+                            <br>
+                            <input type="radio" id="professor" name="perfil">
+                            <label for="professor">Professor</label>
+                            <br>
+                            <input type="radio" id="comunidade" name="perfil">
+                            <label for="comunidade">Comunidade Externa</label>
+                            <br>
+                            <p>Mensagem:</p>
+                            <textarea id="mensagem" name="mensagem" minlength="15"  style="max-width:500px; height:75px;" required>
+                            </textarea>
+                            <br>
+                            <input type="submit">
+                        </fieldset>
+                    </form>
+                `;
+            }
+        }
+        // Confirma e faz um resumo do formulário
+        function confirmarAcao(event){
+            event.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const telefone = document.getElementById("tel").value;
+            const assunto = document.getElementById("assunto").value;
+            const perfil = document.querySelector('input[name="perfil"]:checked').value;
+            const mensagem = document.getElementById("mensagem").value;
+
+            const resumo = `
+            Dados Informados:
+            Nome Completo: ${nome}
+            Email: ${email}
+            Telefone: ${telefone}
+            Assunto: ${assunto}
+            Perfil: ${perfil}
+            Mensagem: ${mensagem}
+                
+            Enviar formulário:`;
+
+            if (confirm(resumo)) {
+                event.target.submit();
+            }
+
+            return false;
+
+        }
+    </script>
+</body>
+</html>

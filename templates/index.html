@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagina_contratos</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+    <style>
+        body {
+            background-image: url('img/background.jpeg');   /*Responsável por alterar a imagem do fundo da página*/
+            background-repeat: no-repeat;   /*Responsável por não permitir que a imagem se repita no fundo*/
+            background-attachment: fixed;   /*Responsável por deixar a imagem fixa, sem que acompanhe o rolamento do mouse*/
+            background-size: cover;     /*Responsável por alterar o tamanho da imagem de fundo, fazendo com que ela preencha todo o fundo*/
+            font-family: Arial;     /*Responsável por alterar a fonte dos textos de toda a página*/
+        }
+        a:link{
+            color: black;   /*Responsável por alterar a cor do link*/
+            /*(Essas regras foram replicadas no a:visited, que altera as características quando o link foi visitado e a:active, que altera as características quando o link é clicado.).*/
+        } 
+        a:visited{
+            color: black; 
+            text-decoration: none;  /*Responsável por retirar as decorações do link (a linha sublinhada)*/
+        }
+        a:active{
+            color: black;   
+            text-decoration: none; /*Responsável por retirar as decorações do link (a linha sublinhada)*/
+        }
+        header {
+            border-collapse: collapse;  /*Responsável por determinar o modelo das bordas do cabeçalho, nesse caso uma borda de linha única*/
+            width: 70%; /*Responsável por alterar a largura do cabeçalho*/
+            margin: auto;   /*Responsável por deixar o cabeçalho centralizado*/
+            height: 100px;  /*Responsável por alterar a altura do cabeçalho*/
+            background-color: #03BB85;  /*Responsável por alterar a cor de fundo do cabeçalho*/
+            border: 2px solid black;    /*Responsável por determinar a largura e cor da borda do cabeçalho*/
+            text-align: center; /*Responsável por determinar a posição dos textos dentro do cabeçalho*/
+            color: black;   /*Responsável por determinar a cor padrão do texto do cabeçalho*/
+        }
+        nav {
+            border-collapse: collapse;  /*Responsável por determinar o modelo das bordas do menu de botões, nesse caso uma borda de linha única*/
+            height: auto;  /*Responsável por alterar a altura do menu de botões*/
+            width: 15%; /*Responsável por alterar a largura do menu de botões*/
+            background-color: #038554;  /*Responsável por alterar a cor de fundo do menu de botões*/
+            border: 2px solid black;    /*Responsável por determinar a largura e cor da borda do menu de botões*/
+            text-align: center; /*Responsável por determinar a posição dos textos dentro do menu de botões*/
+            color: black;   /*Responsável por determinar a cor padrão do texto do menu de botões*/
+        }
+        section{
+            display: flex;  /*Responsável por alterar a maneira que os blocos vão dividir espaço na página*/
+            width: 70%; /*Responsável por alterar a largura da seção*/
+            margin: auto;   /*Responsável por deixar o bloco centralizado*/
+        }
+        main{
+            width: 100%;    /*Responsável por alterar a largura do conteúdo principal*/
+            height: auto;   /*Responsável por alterar a altura do conteúdo principal*/
+            background-color: #06402B; /*Responsável por alterar a cor de fundo do botão quando o mouse estiver encima*/
+        }
+        footer {
+            border-collapse: collapse;  /*Responsável por determinar o modelo das bordas do rodapé, nesse caso uma borda de linha única*/
+            width: 70%; /*Responsável por alterar a largura do rodapé*/
+            margin: auto;   /*Responsável por deixar o rodapé centralizado*/
+            height: 100px;  /*Responsável por alterar a altura do rodapé*/
+            background-color: #005227;  /*Responsável por alterar a cor de fundo do rodapé*/
+            border: 2px solid black;    /*Responsável por determinar a largura e cor da borda do rodapé*/
+            text-align: center; /*Responsável por determinar a posição dos textos dentro do rodapé*/
+            color: whitesmoke;  /*Responsável por determinar a cor padrão do texto do rodapé*/
+        }
+        button{
+            width: 80%;    /*Responsável por alterar a largura do botão*/
+            height: 50px;   /*Responsável por alterar a altura do botão*/
+            background-color: #ECF7E9;  /*Responsável por alterar a cor de fundo do botão*/
+            border: 2px solid black;    /*Responsável por determinar a largura e cor da borda dos botões*/
+            border-radius: 8px; /*Responsável por arredondar a borda do botão*/
+            cursor: pointer; /*Responsável por alterar o ponteiro do mouse*/
+        }
+        button:hover{
+            background-color: grey; /*Responsável por alterar a cor de fundo do botão quando o mouse estiver encima*/
+        }
+        button:active {
+            transform: scale(0.98); /*Responsável por alterar o tamanho do botão quando for clicado*/
+        }
+        .blocoscurriculo {
+            margin: auto; /*Responsável por centralizar o curriculo*/
+            display: grid;  /*Responsável por alterar a maneira que os blocos vão dividir espaço*/
+            grid-template-columns: 30% 70%; /*Responsável por definir a maneira que os blocos vão dividir espaço*/
+            width: 70%; /*Responsável por alterar a largura do curriculo*/
+            background-color: #038554;
+        }
+
+        .conteudocurriculo {
+            border: 2px solid black;    /*Responsável por determinar a largura e cor da borda do curriculo*/
+            text-align: left;   /*Responsável por determinar a posição dos textos dentro do curriculo*/
+            color: black;   /*Responsável por determinar a cor padrão do texto dentro do curriculo*/
+            padding: 20px;  /*Responsável por determinar a distância do conteudo para as bordas do bloco*/
+            height: auto;   /*Responsável por alterar a altura do bloco*/
+        }
+        .blocotemal {
+            margin: auto;   /*Responsável por deixar o tema centralizado*/
+            width: 70%; /*Responsável por alterar a largura do tema*/
+            height: auto;   /*Responsável por alterar a altura do tema*/
+        }
+
+        .conteudotemal {
+            display: grid;  /*Responsável por alterar a maneira que os blocos vão dividir espaço*/
+            grid-template-columns: 30% 70%; /*Responsável por definir a maneira que os blocos vão dividir espaço*/
+            background-color: #AAAAAA;  /*Responsável por alterar a cor de fundo do tema*/
+            border-style: outset;   /*Responsável por alterar o estilo da borda*/
+            padding: 10px;  /*Responsável por determinar a distância do conteudo para as bordas do bloco*/
+            text-align: left; /*Responsável por determinar a posição dos textos dentro dos blocos*/
+            color: black;   /*Responsável por determinar a cor padrão do texto dos blocos*/
+        }
+        form{
+            margin: auto;   /*Responsável por deixar o formulário centralizado*/
+            width: 90%; /*Responsável por alterar a largura do formulário*/
+            padding-top: 5%;    /*Responsável por determinar a distância do conteudo para as bordas do bloco*/
+            background-color: snow; /*Responsável por alterar a cor de fundo do formulário*/
+        }
+        @media screen and (max-width: 768px) {
+            /* Mudanças aplicadas para telas de celular: */
+            section{
+                display: block; /*Responsável por alterar a maneira que os blocos vão dividir espaço*/
+            }
+            nav{
+                display:block;  /*Responsável por alterar a maneira que os blocos vão dividir espaço*/
+                height: auto;   /*Responsável por alterar a altura do menu de botões*/
+                width: 100%;    /*Responsável por alterar a largura do menu de botões*/
+            }
+            button{
+                width: 80%;    /*Responsável por alterar a largura do botão*/
+                height: 50px;   /*Responsável por alterar a altura do botão*/
+            }
+        }
+
+    </style>
+
+</head>
+
+<body> 
+   <noscript>
+        <div style="background-color: #ECF7E9; padding: 10px; text-align: center;">
+            <strong>Aviso:</strong> Seu navegador está com o JavaScript desativado. 
+            Por favor, ative-o para uma melhor experiência neste site.
+        </div>
+    </noscript>
+      <!-- CABEÇALHO -->
+    <header>
+        <h1>
+            MINHA PÁGINA
+        </h1>
+    </header>
+      <!-- CONTEÚDO -->
+     
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section>
+        <nav>
+        </nav>
+        <main id="conteudo">
+        </main>
+    </section> 
+    <!-- RODAPÉ -->
+    <footer>
+        <h3>
+        </h3>
+    </footer>
