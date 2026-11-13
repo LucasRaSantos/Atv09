@@ -1,14 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pagina_contratos</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
 
     <style>
         body {
-            background-image: url('img/background.jpeg');   /*Responsável por alterar a imagem do fundo da página*/
+            background-image: url("{% static 'portal/img/background.jpeg' %}");  /*Responsável por alterar a imagem do fundo da página*/
             background-repeat: no-repeat;   /*Responsável por não permitir que a imagem se repita no fundo*/
             background-attachment: fixed;   /*Responsável por deixar a imagem fixa, sem que acompanhe o rolamento do mouse*/
             background-size: cover;     /*Responsável por alterar o tamanho da imagem de fundo, fazendo com que ela preencha todo o fundo*/
@@ -152,12 +153,24 @@
     <!-- CONTEÚDO PRINCIPAL -->
     <section>
         <nav>
+            {% for item in menu_itens %}
+                {% if item.tipo_destino == 'interno' and item.conteudo %}
+                    {% if item.conteudo.slug == 'inicio' %}
+                        <a href="{% url 'home' %}"><button>{{ item.titulo }}</button></a>
+                    {% else %}
+                        <a href="{% url 'exibir_conteudo' item.conteudo.slug %}"><button>{{ item.titulo }}</button></a>
+                    {% endif %}
+                {% elif item.tipo_destino == 'externo' and item.url_externa %}
+                    <a href="{{ item.url_externa }}" target="_blank" rel="noopener noreferrer"><button>{{ item.titulo }}</button></a>
+                {% endif %}
+            {% empty %}
+                <a href="{% url 'home' %}">Início</a>
+            {% endfor %}
         </nav>
         <main id="conteudo">
-              {% for conteudo in conteudos %}
-                {% if conteudo.ativo %}
-                  {{conteudo}}
-              {% endfor %}
+              {% block content %}
+                
+              {% endblock %}
         </main>
     </section> 
     <!-- RODAPÉ -->

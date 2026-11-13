@@ -1,0 +1,17 @@
+{% extends 'portal/base.html' %}
+
+{% block title %}
+    {% if conteudo %}{{ conteudo.titulo }}{% else %}Portal{% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if conteudo %}
+        <!-- O filtro |safe faz o Django renderizar as tags HTML cadastradas no Admin -->
+        {{ conteudo.conteudo_html|safe }}
+    {% else %}
+        <section class="conteudo">
+            <h1>Bem-vindo ao Portal</h1>
+            <p>Nenhum conteúdo ativo foi cadastrado no Django Admin ainda.</p>
+        </section>
+    {% endif %}
+{% endblock %}
